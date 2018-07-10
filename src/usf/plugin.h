@@ -25,6 +25,10 @@ class USFPlugin : public InputPlugin
     bool play (const char * filename, VFSFile & file);
 
 
+    // Missing virtual methods
+    bool read_tag (const char * filename, VFSFile & file, Tuple & tuple, Index<char> * image);
+
+
     void open_sound();
     void add_buffer(unsigned char *buf, unsigned int length);
     void ai_len_changed();

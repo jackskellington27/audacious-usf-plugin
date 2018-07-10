@@ -48,6 +48,12 @@ Tuple USFPlugin::read_tuple (const char * filename, VFSFile & file){
     return usf_get_song_tuple(filename, &file);
 }
 
+
+bool USFPlugin::read_tag (const char * filename, VFSFile & file, Tuple & tuple, Index<char> * image) {
+    tuple = usf_get_song_tuple(filename, &file);
+    return true;
+}
+
 bool USFPlugin::play (const char * filename, VFSFile & file){
     return usf_play(this, filename, &file);
 }
